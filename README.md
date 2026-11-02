@@ -42,7 +42,7 @@
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
 
-
+I am using the r/eagles community on Reddit, which is a subreddit of fans of the Philadelphia Eagles NFL team. My classifier sorts posts into four labels: news, analysis, hot_take, and reaction, based on the purpose of the post. The plan is to distinguish emotional responses, unsupported opinions, factual news, and evidence based arguments.
 
 ---
 
@@ -54,35 +54,55 @@
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `label_one`
+### `news`
 
-**Definition:**
-
-**Example 1:**
->
-
-**Example 2:**
->
-
-### `label_two`
-
-**Definition:**
+**Definition:** A post that primarily reports factual information, statistics, or updates from reporters or official sources about the Eagles without adding significant personal interpretation or opinion.
 
 **Example 1:**
->
+> [Lane Johnson] Thank You 🦅 [Body contains picture of a statement from Lane Johnson announcing his retirement]
 
 **Example 2:**
->
+> [Garofolo] The #Eagles are releasing QB Andy Dalton, sources say. Tanner McKee and Cole Payton will be the backups to Jalen Hurts moving forward.
+
+### `analysis`
+
+**Definition:** A post that evaluates or explains something about the Eagles using specific, checkable evidence that meaningfully supports its main conclusion.
+
+**Example 1:**
+> Despite the loss, Carter had his best game by far for the year: 5 TKL, 3 TFL, 2 SACK, 2 FF, 1 PD. Included a pivotal goal line stop.
+
+**Example 2:**
+> One concern coming into the season that has turned into a positive is Jake Elliott. 4/4 on FG’s, including two makes from 50 plus. And 9/9 on XP’s. Glad to see him back in the groove again.
+
+### `hot_take`
+
+**Definition:** A post that primarily makes a strong opinion, judgment, demand, or prediction about the Eagles without developing sufficient evidence-based reasoning to support its conclusion.
+
+**Example 1:**
+> Time to fire Sirianni - Yet another terrible game management decision. 8 seconds to go, they have no timeouts, they already took one to the house on a kickoff...yet we don't kick a touchback. I personally have given so much grace to this guy, but I'm done. I'm done watching the eagles as long as he is the coach.
+
+**Example 2:**
+> Jalen Hurts should receive NO blame for this game, after carrying the team without Smitty, Saquon and half the OL. Sirianni blew it again.
+
+### `reaction`
+
+**Definition:** A post that primarily expresses personal feelings, appreciation, excitement, frustration, or disappointment about an Eagles-related event rather than developing a broader argument or judgment.
+
+**Example 1:**
+>THANK YOU CAM - Gutted it out in the Super Bowl, and one of the biggest reasons for Saquon's historic season. Will be rooting for him in Baltimore.
+
+**Example 2:**
+>Don't cry because it's over, smile because it happened. - Remember what these guys did for us in the years to come. Greatest rushing season of all time.
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `analysis` and `hot_take`
 
 **The decision rule I used every time:**
+If a post uses specific, verifiable evidence to explain or evaluate something and that evidence meaningfully supports its main conclusion, I classify it as `analysis`. If a post mainly makes a strong statement without enough supporting evidence, I classify it as `hot_take`. Simply mentioning a statistic or specific event is not enough to qualify as analysis.
+
 <!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
      if the tone is heated." -->
-
-
 
 ---
 
@@ -146,8 +166,6 @@ Say so plainly — the disclosure is required, not penalised. -->
 **Split sizes:** <!-- train / val / test, and per-label counts in the test
 split. If a label had fewer than about 8 in test, say so — it explains a lot
 of next unit's variance. -->
-
-
 
 ---
 
