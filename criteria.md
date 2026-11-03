@@ -51,63 +51,49 @@ whether you hit them:
 
 ---
 
-## 1.
+## 1. The classifier should achieve an overall accuracy of at least 70%.
 
 <!-- Your criterion. It must name a number. -->
 
-
-
 **Why this target:**
 
-
+Since my classifier uses four labels (news, analysis, hot_take, and reaction), I want it to correctly classify most Eagles posts. I chose 70% because it is significantly better than random guessing with four balanced labels (25%), but still accounts for overlap between categories, especially analysis and hot takes.
 
 ---
 
-## 2.
-
+## 2. The classifier should achieve a macro F1 score of at least 0.60.
 <!-- Your criterion. -->
-
-
 
 **Why this target:**
 
-
+I chose this criterion because overall accuracy alone could hide poor performance on less common labels. Since my dataset has four categories that may not be perfectly balanced, I want the model to perform reasonably well across all of them rather than relying on one or two dominant labels.
 
 ---
 
-## 3.
-
+## 3. The `analysis` label should achieve an F1 score of at least 0.50.
 <!-- Your criterion. -->
-
-
 
 **Why this target:**
 
-
+While browsing r/eagles, I noticed that genuine analysis posts were harder to find than news updates or opinions. Analysis can also overlap with hot_take, since some opinions mention statistics or specific plays without providing meaningful reasoning. I chose 0.50 because I expect this to be one of the more difficult labels for the model to learn, especially with a relatively small dataset.
 
 ---
 
-## 4.
-
+## 4. No single label should account for more than 50% of the 200 labeled posts in labels.csv.
 <!-- Your criterion. -->
-
-
 
 **Why this target:**
 
-
+I noticed that r/eagles contains many news reports and reposts, which could easily dominate the dataset. I chose 50% because it seemed like anything more would be excessive.
 
 ---
 
-## 5.
-
+## 5. The accuracy of the model's highest confidence predictions should be at least 15 percentage higher than the accuracy of its lowest confidence predictions.
 <!-- Your criterion. -->
-
-
 
 **Why this target:**
 
-
+Some Eagles posts are straightforward to classify, while others fall between labels such as analysis and hot_take. I want the model to be more reliable when it makes confident predictions. I chose a 15 percentag difference because it would show that confidence provides useful information, while keeping in mind the small sample size might cause inconsistency.
 
 ---
 
