@@ -111,45 +111,50 @@ If a post uses specific, verifiable evidence to explain or evaluate something an
 <!-- Where you collected from, how you labelled, your counts, and three hard
      cases. -->
 
-**Where the posts came from:**
+**Where the posts came from:** I got the posts from the r/eagles subreddit, sorted by Top This Month. I tried a few different methods to collect them, including manually copying posts, JavaScript, Python scripts, and ChatGPT. I started with around 400 posts, but a lot of them had pictures, videos, or links instead of written bodies. I ended up removing posts that didn't have enough context on their own, leaving me with 158 examples.
 
 **How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
 Say so plainly — the disclosure is required, not penalised. -->
+I first labeled 20 posts on my own. Then I used ChatGPT to help label the rest based on my definitions. I went through the suggestions, especially the harder ones, and changed some labels that didn't fit. I also removed a few posts that relied too much on pictures or videos.
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| news | 71 | 44.9% |
+| analysis | 30 | 19% |
+| hot_take | 27 | 17.1% |
+| reaction | 30 | 19% |
+| **Total** | 158 | 100% |
 
 **Three hard cases**
 
 <!-- Any post that made you pause: what it was, which two labels it could have
      been, and what you chose. These are worth more than the easy 190. -->
 
-**1.**
-> *The post:*
->
-> *Could have been:*
->
-> *I chose, because:*
+**1. Jalen Hurts should receive NO blame / Sirianni blew it again**
 
-**2.**
-> *The post:*
+> *The post:* "Jalen Hurts should receive NO blame for this game, after carrying the team without Smitty, Saquon and half the OL. Sirianni blew it again."
 >
-> *Could have been:*
+> *Could have been:* `analysis` or `hot_take`.
 >
-> *I chose, because:*
+> *I chose:* `hot_take`, because the missing players are relevant context but do not establish the stronger judgments that Hurts deserves *no* blame or that Sirianni caused the loss.
 
-**3.**
-> *The post:*
+**2. Fangio's refusal to adjust**
+
+> *The post:* "Fangio’s refusal to adjust needs to seriously be discussed. We are last in the entire league in quick pressure rates... Fangio is refusing to accept that his front 4 can’t do it."
 >
-> *Could have been:*
+> *Could have been:* `analysis` or `hot_take`.
 >
-> *I chose, because:*
+> *I chose:* `hot_take` after initially considering `analysis`. The pressure statistic supports concern about the pass rush but does not demonstrate that Fangio refused to change his approach. Mentioning a statistic isn't enough unless it supports the actual conclusion.
+
+**3. Three touchdowns in the final seconds of halves**
+
+> *The post:* "[Fun Fact] The Philadelphia Eagles have 3 touchdowns within the final 10 seconds of a half so far this season" followed by three specific touchdowns and their times.
+>
+> *Could have been:* `news` or `analysis`.
+>
+> *I chose:* `news`, because this primarily reports a collection of checkable statistics. The positive reaction at the end does not turn it into an explanation or evaluation supported by evidence.
 
 ---
 

@@ -5,6 +5,7 @@
 #
 # Delete the examples below and put yours in.
 
-analysis: makes an argument backed by a specific, checkable fact
-hot_take: a confident claim with no support offered
-reaction: an immediate response to something that just happened
+news: A post that primarily reports factual information, statistics, or updates from reporters or official sources about the Eagles without adding significant personal interpretation or opinion.
+analysis: A post that evaluates or explains something about the Eagles using specific, checkable evidence that meaningfully supports its main conclusion.
+hot_take: A post that primarily makes a strong opinion, judgment, demand, or prediction about the Eagles without developing sufficient evidence based reasoning to support its conclusion.
+reaction: A post that primarily expresses personal feelings, appreciation, excitement, frustration, or disappointment about an Eagles related event rather than developing a broader argument or judgment.
