@@ -163,14 +163,27 @@ I first labeled 20 posts on my own. Then I used ChatGPT to help label the rest b
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
 **Base model:**
+`distilbert-base-uncased` (DistilBERT)
 
 **Settings:** <!-- epochs, learning rate, batch size, seed -->
+3 epochs, learning rate 2e-5, batch size 16, maximum length 128 tokens, and seed 42. Trained on my Mac using the Apple Silicon GPU (`mps`) with PyTorch 2.14.1.
 
 **Anything I changed from the defaults, and why:**
+I kept the default training settings. The only change I made was setting `LABELS` to my four labels: `analysis`, `hot_take`, `reaction`, and `news`.
 
 **Split sizes:** <!-- train / val / test, and per-label counts in the test
 split. If a label had fewer than about 8 in test, say so — it explains a lot
 of next unit's variance. -->
+
+| Label | Train | Validation | Test |
+|---|---:|---:|---:|
+| analysis | 21 | 4 | 5 |
+| hot_take | 19 | 4 | 4 |
+| reaction | 21 | 5 | 4 |
+| news | 49 | 11 | 11 |
+| **Total** | **110** | **24** | **24** |
+
+Three labels (`analysis`, `hot_take`, and `reaction`) have fewer than 8 examples in the test set. This is mainly because I ended up with 158 total posts instead of 200, so the test set is pretty small. With so few examples per label, their F1 scores could vary a lot between different training seeds. I'll keep that in mind when evaluating the results in Unit 6.
 
 ---
 
