@@ -88,7 +88,7 @@ I noticed that r/eagles contains many news reports and reposts, which could easi
 
 ---
 
-## 5. The accuracy of the model's highest confidence predictions should be at least 15 percentage higher than the accuracy of its lowest confidence predictions.
+## 5. The accuracy of the model's highest confidence predictions should be at least 15 percentage points higher than the accuracy of its lowest confidence predictions.
 <!-- Your criterion. -->
 
 **Why this target:**

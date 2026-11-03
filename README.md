@@ -42,7 +42,7 @@
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
 
-I am using the r/eagles community on Reddit, which is a subreddit of fans of the Philadelphia Eagles NFL team. My classifier sorts posts into four labels: news, analysis, hot_take, and reaction, based on the purpose of the post. The plan is to distinguish emotional responses, unsupported opinions, factual news, and evidence based arguments.
+I am using the r/eagles community on Reddit, which is a subreddit for fans of the Philadelphia Eagles NFL team. My classifier sorts posts into four labels: `news`, `analysis`, `hot_take`, and `reaction`, based on the main purpose of the post. The goal is to distinguish emotional responses, unsupported opinions, factual news, and evidence-based arguments.
 
 ---
 
@@ -198,17 +198,19 @@ Three labels (`analysis`, `hot_take`, and `reaction`) have fewer than 8 examples
 
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* I used ChatGPT to help me figure out the differences between my four labels, especially `analysis` and `hot_take`. Some posts mentioned statistics or specific plays, but I wasn't sure if that automatically made them analysis.
+- *What came back:* ChatGPT helped me compare borderline examples, including a post calling for Sirianni to be fired because of a specific coaching decision. It initially suggested that the post could count as analysis.
+- *What I changed:* I disagreed because the post was mostly a strong opinion rather than actual analysis. I refined my decision rule so that evidence needs to meaningfully support the main conclusion, not just be mentioned.
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* I used ChatGPT to help with collecting and organizing Reddit posts because getting the full post bodies was difficult. I also asked it to suggest labels for the posts after I labeled my first 20 on my own.
+- *What came back:* ChatGPT helped me explore different collection methods and suggested labels using my definitions. Some posts were difficult to classify because they mixed opinions, reactions, and statistics.
+- *What I changed:* I reviewed the suggested labels and corrected some that didn't fit my definitions. I also removed posts that relied too much on pictures, videos, or links without enough written context.
 
 **Pre-labelling disclosure:**
+
+I labeled the first 20 posts myself without AI assistance and marked them `cold` in `labels.csv`. For the remaining posts, I used ChatGPT to suggest labels, then reviewed the suggestions and made corrections where needed.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
