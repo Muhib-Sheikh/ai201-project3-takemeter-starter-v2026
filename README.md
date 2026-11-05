@@ -226,20 +226,24 @@ I labeled the first 20 posts myself without AI assistance and marked them `cold`
 
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Overall accuracy | 0.208 | 0.458 | +0.250 |
+| Macro F1 | 0.086 | 0.157 | +0.071 |
+| F1 — `analysis` | 0.345 | 0.000 | -0.345 |
+| F1 — `hot_take` | 0.000 | 0.000 | +0.000 |
+| F1 — `news` | 0.000 | 0.629 | +0.629 |
+| F1 — `reaction` | 0.000 | 0.000 | +0.000 |
 
 **What I predicted before I looked:**
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
+I predict my trained model will perform better on news posts since they make up the largest part of my dataset. However, I think the baseline might perform better overall because my trained model struggled to distinguish the other three labels.
 
 **What the gap actually means:**
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
+My trained model performed better overall, with 45.8% accuracy compared to the baseline's 20.8%. However, most of that improvement came from predicting news for every post, which was also the most common label in my test set. The baseline actually did better on analysis, but failed on the other three labels. This shows that fine-tuning improved accuracy, but my model still hasn't learned how to properly distinguish between all four categories.
 
-
+I also tested the baseline using only the label names without definitions. Surprisingly, it performed better, improving from 20.8% to 33.3% accuracy and from 0.086 to 0.220 macro F1. This suggests that my definitions didn't help the model distinguish the categories as well as I expected.
 
 ---
 

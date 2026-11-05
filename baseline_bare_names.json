@@ -1,0 +1,160 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 24,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": false,
+  "scores": {
+    "n": 24,
+    "accuracy": 0.3333333333333333,
+    "f1_macro": 0.21978021978021972,
+    "per_label": {
+      "analysis": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 5
+      },
+      "hot_take": {
+        "precision": 0.2222222222222222,
+        "recall": 0.5,
+        "f1": 0.30769230769230765,
+        "support": 4
+      },
+      "news": {
+        "precision": 0.6,
+        "recall": 0.5454545454545454,
+        "f1": 0.5714285714285713,
+        "support": 11
+      },
+      "reaction": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "Schefter: The Philadelphia Eagles are not planning to place quarterback Jalen Hurts on injured reserve, sources told @RapSheet and me, even as he remains sidelined indefinitely because of a superficial blood clot.",
+      "gold": "news",
+      "predicted": "news"
+    },
+    {
+      "text": "Everything is still in front of this team\n\nWe\u2019re four games in. Our defense is elite and the offense still has time to figure things out. I\u2019m still taking us over the field. GO BIRDS \ud83e\udd85",
+      "gold": "reaction",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "[Garafolo] The Eagles are releasing TE E.J. Jenkins.",
+      "gold": "news",
+      "predicted": "news"
+    },
+    {
+      "text": "We are getting out-gained at a historically bad rate. This is flat out not acceptable.",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Trade: Eagles are sending two-time Pro Bowl center Cam Jurgens and a 2027 7th-round pick to the Ravens in exchange for a 2027 5th-round pick and a 2028 2nd-round pick, sources tell ESPN.",
+      "gold": "news",
+      "predicted": "news"
+    },
+    {
+      "text": "Make what you want of PFF. But Cam Jurgens was the 71/72 ranked guards with a PFF score of 39.2 prior to yesterday\u2019s game. Jurgens had an atrocious 30.2 PFF score yesterday. The coaching staff has to intervene. He is a straight up liability.",
+      "gold": "analysis",
+      "predicted": "news"
+    },
+    {
+      "text": "Eagles Injury Report: DeVonta Smith upgraded, Dontayvion Wicks downgraded",
+      "gold": "news",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Nick Foles says Jalen Hurts is not reading defenses or throwing on time, and is missing wide open receivers",
+      "gold": "news",
+      "predicted": "reaction"
+    },
+    {
+      "text": "[Garofolo] The #Eagles are releasing QB Andy Dalton, sources say. Tanner McKee and Cole Payton will be the backups to Jalen Hurts moving forward.",
+      "gold": "news",
+      "predicted": "news"
+    },
+    {
+      "text": "Jeremiah Trotter Jr, a 2024 5th round pick who had only started two Week 18 games in his career, lead our team in tackles today. There needs to actually be a serious discussion about playing him over 2025 1st round pick Campbell next to Baun.",
+      "gold": "analysis",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Do not bench Tanner. He\u2019s the perfect Tank commander for the season\n\n2-15 here we come!",
+      "gold": "reaction",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "This is a big moment for McKee to step up and get us a win by any means necessary. He was awful during preseason. But this is a chance for him to earn significant money next season on the open market.",
+      "gold": "hot_take",
+      "predicted": "news"
+    },
+    {
+      "text": "Jalen Hurts when asked why the offense didn\u2019t drain more clock before Jake Elliott\u2019s field goal: \u201cUltimately, that\u2019s not my place.\u201d",
+      "gold": "news",
+      "predicted": "reaction"
+    },
+    {
+      "text": "If you win a Super Bowl for Philadelphia you become a made man. I\u2019ll never turn my back on the GOAT Eagles QB. Jags game should be a tough one.\n\nPlease all the Hurts haters stay over there, you got it he played like shit in September with all of his best players out and no Oline in the rain. I keep seeing these influences yapping about \u201cDifficult conversations,\u201d I couldn\u2019t care less. There is no conversation. Get a new angle shits played out.\n\nI have been through so much failure and coming up short with my Eagles over the last 30 years. Nothing you can say will change my mind or make me turn my back on Hurts or Nick Foles. It\u2019s called loyalty maybe you should try having some. Stop being soft. I\u2019m moving on.\n\nJags should be fun I get to see how mad I\u2019ll be by 1pm. Is Carson Steele the runningback next week? Saw Dameon Pierce was the choice? Jags are dangerous. Trotter should start, dude flys to the ball like his dad. I am concerned more about the defense and O Line than I am about Hurts.",
+      "gold": "reaction",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Hurts confirmed that he injured his calf in the Rams game. Even though the injury was only listed on the injury report last Friday before the Jaguars game.",
+      "gold": "news",
+      "predicted": "news"
+    },
+    {
+      "text": "Cooper Dejean leads the league in missed tackles(via PFF)\n\nIt\u2019s interesting because he\u2019s been one of the best open field tackling DBs. Probably a combination of the added weight and being on the field more.",
+      "gold": "analysis",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Eagles\u2019 Lane Johnson announces retirement, ending decorated NFL career",
+      "gold": "news",
+      "predicted": "news"
+    },
+    {
+      "text": "Gardner Minshew leads Arizona to beat Dallas!\n\nThank you Gardner",
+      "gold": "reaction",
+      "predicted": "news"
+    },
+    {
+      "text": "By my count, that\u2019s 25 players on the official team injury report just released by the team.",
+      "gold": "news",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Former Eagles DBs coach Christian Parker has been \"Sean Desai'd\" by the Cowboys just a month in. Mike Pettine is effectively the new Cowboys DC\n\nBy Sean Desai'd, I'm referring to how Desai held the title of DC, then lost his game planning duties one week, then lost playcalling soon after to Matt Patricia and was demoted in all but name.\n\nMatt Patricia was even worse for us, so let's hope for the same for Dallas",
+      "gold": "analysis",
+      "predicted": "news"
+    },
+    {
+      "text": "Jalen Hurts takes responsibility for the loss: \"We didn't perform well enough. I didn't perform well enough. Obviously it starts with me. I'll be thinking of all the different things I could've done. I always use 'em as learning lessons. And that's what's great. Ultimately, I'll learn from it.\"",
+      "gold": "news",
+      "predicted": "reaction"
+    },
+    {
+      "text": "Time for Sirianni and Hurts to step up and silence a bunch of Negadelphians who want them both run out of town",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Eagles-Panthers Film Review: Sean Mannion should probably be replaced\n\nI don't think I've ever seen an offense film review this despondent in over 6 years\n\nSummary from the article:\n\nThose of you who have read my work for a while will know that I rarely call for a player to be benched or a coach to be fired. I would much rather explain what is going wrong and look for ways to fix it. But after watching the Eagles\u2019 offense against the Panthers, I think Sean Mannion (you can add more if you want) should probably go. This under-center, outside zone offense he brought in has been dreadful, and I don\u2019t see a coach who looks ready to solve the problems his own system is creating. With so little coaching experience, he looks completely out of his depth.",
+      "gold": "hot_take",
+      "predicted": "analysis"
+    },
+    {
+      "text": "[MARCHAND]  Smith should review the \u201cFirst Take\u201d tape and consider his words one more time.\n\nOn Wednesday morning on his show, \u201cFirst Take,\u201d Smith belittled Philadelphia Eagles All-Pro tackle Lane Johnson for retiring four games into the season, ending an illustrious career. Johnson, whose battles with his mental health have been well-chronicled, alluded to these issues in his announcement.\n\nf Smith, who has professional roots in Philadelphia, made a call or two, he could find out how profound Johnson\u2019s situation is. Even without picking up the phone, it is easy to discover that part of Johnson\u2019s legacy is how open, honest and courageous he has been in talking about his struggles, including missing three games in 2021 from withdrawal symptoms after cycling off SSRI antidepressants.\n\nInstead, Smith did television.\n\nRead Andrew Marchand's full piece for free: https://www.nytimes.com/athletic/7668803/2026/10/07/stephen-a-smith-lane-johnson-mental-health/?unlocked_article_code=1.G1E.duac.zAH-RxhVONnY&source=emp_shared_article&smid=url-share-ta",
+      "gold": "analysis",
+      "predicted": "reaction"
+    }
+  ]
+}
