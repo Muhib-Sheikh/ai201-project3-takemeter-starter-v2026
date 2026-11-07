@@ -306,8 +306,6 @@ The biggest confusion was 5 actual `analysis` posts being classified as `news`, 
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
 
-
-
 ---
 
 ## Agreement Report
@@ -318,7 +316,7 @@ The biggest confusion was 5 actual `analysis` posts being classified as `news`, 
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** ___ / 30 = ___%
+**Agreement rate:** 23 / 30 = 76.7%
 
 <!-- Nobody grades this number. A 60% who argues every disagreement from the
      stated rules beats a 95% who wrote "staff was right" nine times. Several
@@ -340,27 +338,81 @@ The biggest confusion was 5 actual `analysis` posts being classified as `news`, 
      written rule two different ways on 30 posts, that is direct evidence about
      what you did across your own 200. -->
 
-**1.**
-> *The post:*
->
-> *Staff said / I said:*
->
-> *My call, and why:*
->
-> *Which pile:*
+**1. Winning times vs. 100th-place times**
 
-**2.**
-> *The post:*
+> *The post:* "Pulled the splits from the last five editions. The winning time has moved by 40 seconds total in ten years, but the 100th-place time is four minutes faster. The depth changed, the front didn't."
 >
-> *Staff said / I said:*
+> *Staff said / I said:* `analysis` / `hot_take`
 >
-> *My call, and why:*
+> *My call, and why:* I originally thought this was a hot take because it didn't provide much reasoning beyond the numbers. Looking at Rule 1 again, I think staff is right. The comparison between the winning time and 100th-place time directly supports the conclusion that the field got deeper while the fastest runners stayed relatively consistent. I was expecting more explanation when the evidence was already there.
 >
-> *Which pile:*
+> *Which pile:* (a) I applied the rule too strictly.
+
+**2. Club championship scoring**
+
+> *The post:* "The club championship scoring changed in 2019 from top-6 to top-10. Since then our B team has finished above the A team twice. That's not depth improving, it's the scoring rewarding turnout."
+>
+> *Staff said / I said:* `analysis` / `hot_take`
+>
+> *My call, and why:* I initially thought there wasn't enough reasoning to support the conclusion. However, the post mentions a specific rule change and uses the results afterward to explain why turnout might matter more. Under Rule 1, the evidence supports the argument, even if it doesn't completely prove it. I think staff has the stronger interpretation here.
+>
+> *Which pile:* (a) I expected stronger proof than the definition required.
+
+**3. The hill at mile 18**
+
+> *The post:* "Everyone blames the hill at 18 miles. I split the field into people who ran the first half under 1:45 and over, and the slowdown after 18 was almost identical for both groups. If the hill were the problem the fast starters would fall apart harder."
+>
+> *Staff said / I said:* `analysis` / `hot_take`
+>
+> *My call, and why:* This was one of the harder cases for me. I initially questioned whether the comparison actually proved anything about the hill. However, the writer compared two groups and used the results to challenge an explanation. Rule 1 only requires evidence that meaningfully supports the argument, not absolute proof. I think staff is right here.
+>
+> *Which pile:* (a) I was too strict about how much evidence was needed.
+
+**4. First-time runners and finish-line photos**
+
+> *The post:* "Checked the entry lists. 41% of this year's field have never run the distance before, against 26% five years ago. That's why the finish-line photos look different, not because standards dropped."
+>
+> *Staff said / I said:* `analysis` / `hot_take`
+>
+> *My call, and why:* I still think my `hot_take` label is defensible here. The percentages show that more runners are participating for the first time, but I don't think that alone explains why the photos look different or proves that standards haven't dropped. The numbers are relevant, but the conclusion goes further than what they establish. I can see why staff chose `analysis`, but Rule 1 leaves some room for disagreement about whether the evidence actually carries the argument.
+>
+> *Which pile:* (c) The rule is ambiguous here, and I think my interpretation is defensible.
+
+**5. Running in different temperatures**
+
+> *The post:* "Ran the same loop in 4C and in 24C within a fortnight, same effort by heart rate. 90 seconds slower in the heat over six miles. People keep saying heat costs you 'a bit' and it's more than that."
+>
+> *Staff said / I said:* `analysis` / `reaction`
+>
+> *My call, and why:* I originally picked `reaction` because the writer was describing a personal running experience. However, they compared temperatures and times while keeping their effort similar. Those measurements directly support their argument about how much heat affects performance. Rule 3 says a personal experience can still be analysis when it uses evidence to support a conclusion, so I agree with staff.
+>
+> *Which pile:* (a) I focused too much on the personal experience instead of the evidence.
+
+**6. Tuesday club sessions**
+
+> *The post:* "The club needs to stop pretending the Tuesday session is for everyone. It isn't and it never has been."
+>
+> *Staff said / I said:* `hot_take` / `reaction`
+>
+> *My call, and why:* I originally labeled this as a reaction because it sounded frustrated. However, the writer isn't describing something that just happened to them. They're making a general claim about the club without providing evidence. Rule 2 makes this a hot take, so staff is right.
+>
+> *Which pile:* (a) I confused emotional language with an immediate personal reaction.
+
+**7. Injury threads**
+
+> *The post:* "Every injury thread on this forum is the same injury and the same three replies."
+>
+> *Staff said / I said:* `hot_take` / `reaction`
+>
+> *My call, and why:* I thought this was a reaction because it sounded like someone complaining about the forum. Looking at Rule 2, it's actually a general claim about injury threads rather than a response to something that just happened to the writer. There's also no specific evidence supporting it, so I think staff is right.
+>
+> *Which pile:* (a) I treated a general complaint as a reaction.
 
 **What the pattern in my disagreements tells me:**
 
+Most of my disagreements came from how I interpreted the difference between `analysis` and `hot_take`. I was sometimes too strict about how much evidence was needed, even when specific facts supported the main argument. I also confused personal experiences and frustrated opinions with `reaction`, even though the rules focus on whether the post describes an immediate feeling or makes a broader claim.
 
+This makes me think I might have applied some of my own TakeMeter labels inconsistently, especially between `analysis` and `hot_take`. However, Post 6 shows that even with written definitions, there can still be reasonable disagreements about whether the evidence actually supports a conclusion.
 
 ---
 
