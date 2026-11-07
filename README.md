@@ -254,29 +254,31 @@ I also tested the baseline using only the label names without definitions. Surpr
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | ≥ 0.70 | 0.458 | 0.458 | 0.458 | MISSED |
+| 2. Macro F1 | ≥ 0.60 | 0.157 | 0.157 | 0.157 | MISSED |
+| 3. `analysis` F1 | ≥ 0.50 | 0.000 | 0.000 | 0.000 | MISSED |
+| 4. Largest label share | ≤ 50% | 44.9% | 44.9% | 44.9% | MET |
+| 5. Confidence accuracy gap | ≥ 15 pp | 62.5 pp | 62.5 pp | 37.5 pp | MET |
+
+The overall accuracy stayed at 45.8% across all three seeds, with no variation. However, the model predicted news for every post in all three runs. This suggests the model is consistently relying on the most common label rather than learning to distinguish the other categories.
 
 ### Confusion matrix
 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |  |  |  |
-|---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| true \ predicted | analysis | hot_take | reaction | news |
+|---|---|---|---|---|
+| **analysis** | 0 | 0 | 0 | 5 |
+| **hot_take** | 0 | 0 | 0 | 4 |
+| **reaction** | 0 | 0 | 0 | 4 |
+| **news** | 0 | 0 | 0 | 11 |
 
 **My biggest off-diagonal number, and what it means:**
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
-
-
+The biggest confusion was 5 actual `analysis` posts being classified as `news`, while no `news` posts were classified as `analysis`. The model predicted `news` for all 24 posts, so it clearly hasn't learned to distinguish the four labels. This might be related to the imbalance in my dataset, since `news` makes up almost 45% of the posts, but I'll need to look at the agreement report to see if inconsistent labeling also contributed.
 
 ---
 
