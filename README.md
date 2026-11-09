@@ -208,6 +208,14 @@ Three labels (`analysis`, `hot_take`, and `reaction`) have fewer than 8 examples
 - *What came back:* ChatGPT helped me explore different collection methods and suggested labels using my definitions. Some posts were difficult to classify because they mixed opinions, reactions, and statistics.
 - *What I changed:* I reviewed the suggested labels and corrected some that didn't fit my definitions. I also removed posts that relied too much on pictures, videos, or links without enough written context.
 
+**Moment 3**
+
+- *What I asked for:* I used ChatGPT to help me understand my three-seed results and confusion matrix, especially why my accuracy stayed exactly the same across all three seeds.
+
+- *What came back:* ChatGPT pointed out that the model was predicting news for every post, so the identical scores didn't necessarily mean the model was reliable. It also helped me compare my staff labeling disagreements and understand where I might have applied the definitions inconsistently.
+
+- *What I changed:* I used those findings to write my diagnoses and decided to test increasing the training epochs from 3 to 5. After rerunning the model, I compared the results and found that the extra training didn't improve accuracy or F1, so I documented that instead of claiming the improvement worked.
+
 **Pre-labelling disclosure:**
 
 I labeled the first 20 posts myself without AI assistance and marked them `cold` in `labels.csv`. For the remaining posts, I used ChatGPT to suggest labels, then reviewed the suggestions and made corrections where needed.
@@ -289,11 +297,11 @@ The biggest confusion was 5 actual `analysis` posts being classified as `news`, 
 
 | # | Criterion | Target | Verdict | How I decided |
 |---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| 1 | Overall accuracy | ≥ 70% | MISSED | Accuracy was 45.8% for all three seeds, below my 70% target. |
+| 2 | Macro F1 | ≥ 0.60 | MISSED | Macro F1 was 0.157 for all three seeds, well below 0.60. |
+| 3 | `analysis` F1 | ≥ 0.50 | MISSED | The `analysis` F1 was 0.000 for all three seeds. None of the actual analysis posts were correctly classified. |
+| 4 | Largest label share | ≤ 50% | MET | `news` was my largest label at 44.9% of the dataset, below my 50% limit. |
+| 5 | Confidence accuracy gap | ≥ 15 percentage points | MET | The gap between the most and least confident predictions was 62.5, 62.5, and 37.5 percentage points across the three seeds, all above my target. |
 
 **Diagnoses**
 
@@ -305,6 +313,24 @@ The biggest confusion was 5 actual `analysis` posts being classified as `news`, 
      ⚠️ Use your agreement report as evidence. It is the only instrument you
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
+
+**1. Overall accuracy — MISSED**
+
+My model only reached 45.8% accuracy across all three seeds because it predicted `news` for every post. Since 11 of the 24 test posts were actually news, it got those right but missed everything else. My dataset was somewhat imbalanced, with news making up 44.9% of the posts, so I think the model may have learned to rely on the most common label instead of distinguishing the categories.
+
+The agreement report also showed that I sometimes applied label boundaries inconsistently, especially between `analysis` and `hot_take`. However, that doesn't fully explain why the model predicted only `news`. I think the small dataset and label imbalance are more likely contributing factors, although I can't confirm the exact cause yet.
+
+**2. Macro F1 — MISSED**
+
+My macro F1 was only 0.157 because the model scored 0 on `analysis`, `hot_take`, and `reaction`. The only label it performed well on was `news`, with an F1 of 0.629. This means the model wasn't learning to recognize the other three categories.
+
+Each of those labels had only around 27–30 examples in my dataset, compared to 71 news posts. With so few examples, the model may not have had enough information to learn the differences between them. My agreement report also found that I sometimes confused unsupported opinions with reactions, which could make those boundaries harder to learn if I made similar mistakes in my own dataset.
+
+**3. Analysis F1 — MISSED**
+
+The `analysis` label had an F1 of 0.000 across all three seeds. In the Seed 42 confusion matrix, all 5 actual analysis posts were classified as `news`. This suggests the model never learned what makes analysis different from the other labels.
+
+My agreement report gives another possible explanation. Four of my seven disagreements involved labeling posts as `hot_take` or `reaction` when staff considered them `analysis`. I was sometimes too strict about how much evidence was needed to qualify as analysis. That makes me think some of my original Eagles posts may have been labeled inconsistently too, although the staff exercise used a different taxonomy and doesn't prove that my Eagles labels were wrong.
 
 ---
 
@@ -419,25 +445,30 @@ This makes me think I might have applied some of my own TakeMeter labels inconsi
 ## The Improvement
 
 **What I changed:**
+I increased the training epochs from 3 to 5 while keeping everything else the same, including the dataset, labels, learning rate, and batch size.
 
 **Which diagnosis pointed at it:**
+
+My model predicted news for every post across all three seeds, and the evaluation loss was still decreasing after the third epoch. This made me think it might benefit from more training. I wanted to test whether two additional epochs would help it learn the other labels instead of always predicting news.
 
 ### Run Log — After
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | ≥ 0.70 | 0.458 | 0.458 | 0.458 | MISSED |
+| 2. Macro F1 | ≥ 0.60 | 0.157 | 0.157 | 0.157 | MISSED |
+| 3. `analysis` F1 | ≥ 0.50 | 0.000 | 0.000 | 0.000 | MISSED |
+| 4. Largest label share | ≤ 50% | 44.9% | 44.9% | 44.9% | MET |
+| 5. Confidence accuracy gap | ≥ 15 pp | 75.0 pp | 75.0 pp | 50.0 pp | MET |
 
 **Did it help, and how do I know:**
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
 
+Increasing the epochs from 3 to 5 didn't improve the model's classification performance. Accuracy stayed at 45.8% and macro F1 stayed at 0.157 across all three seeds. The model also continued predicting news for every post, so it still failed to recognize the other three labels.
 
+The confidence accuracy gap did improve across all three seeds, but that didn't translate into better predictions. This suggests that training longer changed the model's confidence behavior without fixing the main problem. I think the limited dataset and uneven label distribution are more likely contributing to the issue than simply not having enough training epochs.
 
 ---
 
@@ -445,13 +476,19 @@ This makes me think I might have applied some of my own TakeMeter labels inconsi
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
 
+My model still misses three of my five criteria, even after increasing the training epochs from 3 to 5.
 
+**1. Overall accuracy:** The model is still stuck at 45.8% accuracy because it predicts `news` for every post. If I continued working on this, I'd try balancing the dataset by adding more examples of the other three labels. I stopped because this unit required one improvement, and increasing the epochs didn't solve the problem.
+
+**2. Macro F1:** My macro F1 is still only 0.157 because the model gets an F1 of 0 on three of the four labels. I'd try adding more examples for the smaller categories or adjusting the training process to give them more weight. Since the extra epochs didn't help, I think the issue needs more than just longer training.
+
+**3. Analysis F1:** The `analysis` label still has an F1 of 0.000. My agreement report showed that I sometimes struggled with the boundary between `analysis` and `hot_take`, so I'd go back through those posts and check whether I applied my definitions consistently. I didn't change the labels during this unit because I wanted to keep my improvement limited to one training setting.
 
 **The gap between what I meant my labels to capture and what the model
 learned:**
 <!-- Two sentences. Your confusion matrix is the evidence. -->
 
-
+I wanted my classifier to distinguish factual news, evidence-based analysis, unsupported opinions, and emotional reactions, but the confusion matrix shows that it learned to predict `news` for everything. Instead of learning the differences between my four labels, it relied on the most common category and missed every post belonging to the other three.
 
 <!-- ═════════════════════════════════════════════════════════════════════
 
